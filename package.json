@@ -1,0 +1,17 @@
+{
+  "name": "agenda-reverter",
+  "private": true,
+  "type": "module",
+  "description": "Agenda interna del Estudio Jurídico Reverter",
+  "scripts": {
+    "start": "node server/index.js",
+    "clave": "node server/recuperar-clave.js"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "dependencies": {
+    "busboy": "1.6.0",
+    "express": "4.21.2"
+  }
+}
