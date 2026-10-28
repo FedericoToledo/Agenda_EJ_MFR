@@ -141,6 +141,7 @@ export function isPreviewable(mime) {
 }
 
 export function archivoSrc(item, download = false) {
+  if (item?.demoUrl) return item.demoUrl;
   const version = encodeURIComponent(item.updatedAt || item.createdAt || '');
   return `/api/archivos/${encodeURIComponent(item.id)}?v=${version}${download ? '&descargar=1' : ''}`;
 }

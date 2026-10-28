@@ -59,7 +59,9 @@ export function loginView(brand) {
           <button class="btn btn-primary" type="submit">Ingresar</button>
           <p class="form-error" id="login-error" hidden></p>
         </form>
-        <p class="foot-note">Uso interno del estudio. No compartas el enlace.</p>
+        <p class="foot-note">${document.documentElement.dataset.demo === '1'
+          ? 'Demostración. Usuario maria, clave demo. Lo que cargues queda en este navegador.'
+          : 'Uso interno del estudio. No compartas el enlace.'}</p>
       </section>
     </main>`;
 }
@@ -542,7 +544,7 @@ function bucketHtml(area, carpeta, bucket) {
 function archivoBucket(area, carpeta, bucket, items) {
   const presentados = new Set((carpeta.items.presentado || []).map((item) => item.origenItemId).filter(Boolean));
   return `
-    <div class="iconacts">
+    <div class="iconacts doc-add">
       ${ibtn('camera', 'Foto', `data-action="sacar-foto" data-carpeta="${esc(carpeta.id)}" data-bucket="${esc(bucket.id)}"`, 'solid green')}
       ${ibtn('file', 'Archivo', `data-action="subir-archivo" data-carpeta="${esc(carpeta.id)}" data-bucket="${esc(bucket.id)}"`)}
     </div>
