@@ -432,17 +432,25 @@ textarea { min-height: 96px; resize: vertical; }
 .iconacts select, .carpeta-tools select { width: auto; max-width: 46vw; }
 .stack > .ibtn { align-self: flex-start; }
 .who { display: flex; align-items: center; gap: 8px; min-width: 0; }
-.who strong, .docmain strong, .docline small { overflow-wrap: anywhere; }
+.who strong, .docmain strong, .docline small { overflow-wrap: break-word; }
 .docline {
   display: flex;
-  flex-wrap: wrap;
-  align-items: flex-start;
-  gap: 6px;
-  padding: 8px 0;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 2px;
+  padding: 10px 0;
   border-bottom: 1px solid var(--line);
 }
-.docmain { display: flex; align-items: flex-start; gap: 8px; min-width: 0; flex: 1; }
-.docmain.tap { border: 0; background: transparent; padding: 0; text-align: left; color: inherit; }
+.docmain { display: flex; align-items: flex-start; gap: 10px; min-width: 0; width: 100%; }
+.docmain > div { min-width: 0; flex: 1; }
+.docmain strong { display: block; line-height: 1.35; font-weight: 600; }
+.docmain small { display: block; margin-top: 2px; line-height: 1.35; }
+.docmain.tap { border: 0; background: transparent; padding: 0; text-align: left; color: inherit; width: 100%; }
+.docmain.tap svg { flex: none; margin-top: 1px; }
+.docmain.tap strong { flex: 1; min-width: 0; }
+.docline > .iconacts { justify-content: flex-start; }
+.docline > .ibtn { align-self: flex-start; }
+.doc-add { justify-content: flex-start; margin: 2px 0 4px; }
 .filemark { width: 36px; height: 36px; display: grid; place-items: center; color: var(--green); flex: none; }
 .legales-search {
   position: sticky;

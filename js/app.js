@@ -1,3 +1,4 @@
+import { installDemo } from './demo.js';
 import { abrirImpresion, cerrarImpresion, htmlArchivo, htmlLegajo } from './print.js';
 import { api, esc, hoyAR, addDays, setUnauthorized, startOfWeek, toast } from './util.js';
 import {
@@ -1104,4 +1105,7 @@ async function boot() {
   else render();
 }
 
-boot();
+installDemo().then(boot).catch((error) => {
+  const root = document.getElementById('app');
+  if (root) root.textContent = error?.message || 'No se pudo abrir la demostración.';
+});
